@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
 @Component
-public class securityCredential {
+public class SecurityCredential {
 
     @Autowired
     private AWSKMS kmsClient;
@@ -25,7 +25,7 @@ public class securityCredential {
     }
 
     private String doDecryptRequest() throws IOException {
-        byte[] cipherTextBlobArray = IOUtils.toByteArray(getClass().getClassLoader().getResourceAsStream("ciphertextBlob"));
+        byte[] cipherTextBlobArray = IOUtils.toByteArray(getClass().getClassLoader().getResourceAsStream("encryptedSecretAsBlob"));
         ByteBuffer cipherTextBlob = ByteBuffer.wrap(cipherTextBlobArray);
 
         DecryptRequest request = new DecryptRequest().withCiphertextBlob(cipherTextBlob);

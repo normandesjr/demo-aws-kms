@@ -1,6 +1,6 @@
 package com.hibicode.demoawskms.resource;
 
-import com.hibicode.demoawskms.credential.securityCredential;
+import com.hibicode.demoawskms.credential.SecurityCredential;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class KeyResource {
 
     @Autowired
-    private securityCredential decrypt;
+    private SecurityCredential decrypt;
 
     @GetMapping
     public String getKey() {
